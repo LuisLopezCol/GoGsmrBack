@@ -1,4 +1,4 @@
-console.log("ejecutamos el proyecto");
+console.log("GoGame Backend is running"); //change
 
 const express = require("express");
 const conectarDB = require("./config/db");
@@ -13,7 +13,8 @@ app.use(express.json());
 //   res.send("hola mundo");
 // });
 
-app.use("/api/gogame", require("./routes/products"));
+app.use("/stock/products", require("./routes/products")); //Changed
+app.use("/sales/history", require("./routes/sales")); //Nuevo
 
 app.listen(3025, () => {
   console.log("App listening on port 3025!");

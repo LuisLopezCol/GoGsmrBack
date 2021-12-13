@@ -1,54 +1,62 @@
 const mongoose = require("mongoose");
 
-const ProductSchema = mongoose.Schema({
-  id: {
+const SaleSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  zipcode: {
+    type: String,
+    required: true,
+  },
+  cellphone: {
     type: Number,
     required: true,
   },
-  thumbnail: {
+  references: {
+    type: String,
+    required: false,
+  },
+  paymenttype: {
     type: String,
     required: true,
   },
-  title: {
+  cardname: {
     type: String,
     required: true,
   },
-  short_description: {
+  cardnumber: {
+    type: Number,
+    required: true,
+  },
+  cardexpire: {
     type: String,
     required: true,
   },
-  game_url: {
+  cardcode: {
+    type: Number,
+    required: true,
+  },
+  saledetail: {
     type: String,
     required: true,
   },
-  genre: {
-    type: String,
-    required: true,
-  },
-  platform: {
-    type: String,
-    required: true,
-  },
-  publisher: {
-    type: String,
-    required: true,
-  },
-  developer: {
-    type: String,
-    required: true,
-  },
-  release_date: {
-    type: String,
-    required: true,
-  },
-  freetogame_profile_url: {
-    type: String,
-    required: true,
-  },
-  create_date: {
-    type: Date,
-    default: Date.now()
-},
 });
 
-module.exports = mongoose.model("Product", ProductSchema);
+module.exports = mongoose.model("Sale", ProductSchema);
